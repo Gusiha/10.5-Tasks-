@@ -23,6 +23,27 @@ namespace _10._5__Tasks_
                 Console.WriteLine("FiveSubscriber : Pressed Button is 5");
             }
         }
+
+        public class DigitSubscriber
+        {
+            public void OnKeyPressed(object sender, KeyboardEventArgs button)
+            {
+                Console.WriteLine($"DigitSubscriber : Pressed Button is {button.Key}");
+            }
+        }
+
+        public class LogSubscriber
+        {
+            public void OnKeyPressed(object sender, KeyboardEventArgs button)
+            {
+                Console.WriteLine($"LogSubscriber : Pressed Button is {button.Key}");
+            }
+        }
+
+        
+
+
+
     }
 
 
