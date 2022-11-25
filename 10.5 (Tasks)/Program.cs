@@ -14,6 +14,14 @@ Subscribers.FiveSubscriber fiveSubscriber = new Subscribers.FiveSubscriber();
 keyboardManager.ThreeKeyPressed += threeSubscriber.OnKeyPressed;
 keyboardManager.FiveKeyPressed += fiveSubscriber.OnKeyPressed;
 
-keyboardManager.DefineKey(keyboardEventArgs);
+
+while (keyboardEventArgs.Key != ConsoleKey.Home)
+{
+    keyboardEventArgs.Key = Console.ReadKey().Key;
+    keyboardManager.DefineKey(keyboardEventArgs);
+
+}
+
+
 
 

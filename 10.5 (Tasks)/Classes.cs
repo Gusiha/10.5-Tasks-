@@ -48,11 +48,7 @@ namespace _10._5__Tasks_
 
     class KeyboardEventArgs : EventArgs
     {
-        public KeyboardEventArgs()
-        {
-            Console.WriteLine("Enter the key");
-            Key = Console.ReadKey().Key;
-        }
+        
         public ConsoleKey Key { get; set; }
     }
 
