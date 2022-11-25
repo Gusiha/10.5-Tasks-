@@ -37,13 +37,19 @@ namespace _10._5__Tasks_
             public void OnKeyPressed(object sender, KeyboardEventArgs button)
             {
                 Console.WriteLine($"LogSubscriber : Pressed Button is {button.Key}");
+                string path = $"C:\\Users\\{Environment.UserName}\\Desktop\\Log.txt";
+                StreamWriter streamWriter = new(path, true);
+                using (streamWriter)
+                {
+                    if (streamWriter != null)
+                    {
+                        streamWriter.Write((char)button.Key);
+                    }
+                    else
+                        throw new NullReferenceException();
+                }
             }
         }
-
-        
-
-
-
     }
 
 

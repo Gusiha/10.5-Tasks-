@@ -3,8 +3,6 @@
     class KeyboardManager
     {
 
-
-
         public event EventHandler<KeyboardEventArgs> ThreeKeyPressed;
         public event EventHandler<KeyboardEventArgs> FiveKeyPressed;
         public event EventHandler<KeyboardEventArgs> DigitKeyPressed;
@@ -13,11 +11,10 @@
 
         public void DefineKey(KeyboardEventArgs button)
         {
-            Console.WriteLine($"\nYou pressed : {button.Key}");
+            Console.WriteLine();
 
             OnKeyPressed(button);
         }
-
 
         // This method is responsible for raising an event 
         protected virtual void OnKeyPressed(KeyboardEventArgs consoleKey)
@@ -27,10 +24,10 @@
                 return;
             }
 
-            // It`s number
+            AnyKeyPressed(this, consoleKey);
+
             if (consoleKey.Key >= ConsoleKey.D0 && consoleKey.Key <= ConsoleKey.D9)
                 DigitKeyPressed(this, consoleKey);
-
 
             switch (consoleKey.Key)
             {
@@ -49,7 +46,6 @@
 
                 default:
                     {
-                        AnyKeyPressed(this, consoleKey);
                         break;
                     }
             }
